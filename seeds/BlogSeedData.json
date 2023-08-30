@@ -1,0 +1,12 @@
+[
+    {
+        "blog_title": "Trial blog 1",
+        "blog_text": "tiral blog text",
+        "user_id": 1
+    },
+    {
+        "blog_title": "Trial blog 2",
+        "blog_text": "trial 2 blog text",
+        "user_id": 2
+    }
+]
