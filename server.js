@@ -1,7 +1,7 @@
 // Import dependencies 
+const path = require('path');
 const express = require('express');
 const exphbs= require('express-handlebars');
-// const path = require('path');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 models = require('./models');
@@ -17,10 +17,11 @@ app.set('view engine','handlebars');
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-// app.use(routes)
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes);
 
 // Starts the server to begin listening
-sequelize.sync({force:true}).then(()=>{
+sequelize.sync().then(()=>{
     app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
