@@ -6,7 +6,7 @@
             <p>
             <div class="is-flex is-justify-content-space-between">
                 <div><strong>{{posts.blog_title}}</strong></div>
-                <div>Posted by: {{posts.user.name}} on {{posts.createdAt}}</div>
+                <div>Posted by: {{posts.user.name}} on {{format_date posts.createdAt}}</div>
             </div>
             <br>
             {{posts.blog_text}}
