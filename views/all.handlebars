@@ -1,62 +1,39 @@
-<div class='menu-container'>
-    <div class='card-header col-md-10'>
-        <h2>
-            &#127869 Current Menu
-        </h2>
+{{!-- fix date --}}
+{{#each currentPostsData as |posts|}}
+<article class="media">
+    <div class="media-content">
+        <div class="content container is-mobile">
+            <p>
+            <div class="is-flex is-justify-content-space-between">
+                <div><strong>{{posts.blog_title}}</strong></div>
+                <div>Posted by: {{posts.user.name}} on {{posts.createdAt}}</div>
+            </div>
+            <br>
+            {{posts.blog_text}}
+            <br>
+            <small> <a>Comment</a> </small>
+            </p>
+        </div>
     </div>
+</article>
 
-    <div class='dish col-md-5'>
-        <p>
-
+{{!-- <article class="media">
+    <figure class="media-left">
+        <p class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/128x128.png">
         </p>
-    </div>
-    <div class='col-md-7'>
-        <p>
-            Guest:
-
-        </p>
-    </div>
-
-    <div class='add-dish-container'>
-        <h2>
-            RSVP with the dish you plan to bring!
-        </h2>
-        <form class='new-dish-form'>
-            <label for='dish_name'>
-                Dish Name:
-            </label>
-            <br />
-            <textarea id='dish_name' name='dish_name' rows='2' cols='30'>
-        dish_name
-      </textarea>
-            <br />
-            <label for='description'>
-                Description:
-            </label>
-            <br />
-            <textarea id='description' name='description' rows='5' cols='30'>
-
-      </textarea>
-            <br />
-            <label for='guest_name'>
-                Guest Name:
-            </label>
-            <br />
-            <textarea id='guest_name' name='guest_name' rows='2' cols='30'>
-
-      </textarea>
-            <br />
-            <br />
-            <input type='checkbox' id='has_nuts' name='has_nuts' value='true' />
-            <label for='has_nuts'>
-                Check box if this dish contains nuts
-            </label>
-            <br />
-            <button type='submit' value='Submit'>
-                Submit
-            </button>
-        </form>
-    </div>
-</div>
-<!-- This is the form for adding a new dish -->
-<script src='/js/add-dish.js'></script>
+    </figure>
+    <div class="media-content">
+        <div class="field">
+            <p class="control">
+                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                <button class="button">Post comment</button>
+            </p>
+        </div>
+    </div> --}}
+</article>
+{{/each}}
