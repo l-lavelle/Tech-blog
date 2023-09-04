@@ -10,6 +10,17 @@ router.get('/signup', async (req, res) => {
     }
 });
 
+// try and see get routes delete when done
+// router.get('/signup', async (req, res) => {
+//     try{
+//       const tagData=await User.findAll()
+//       return res.json(tagData)
+//     }catch(err){
+//       console.log(err);
+//       return res.json(err);
+//     }
+//   });
+
 // Create a new user
 router.post('/signup', async (req, res) => {
     try {
