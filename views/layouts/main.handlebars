@@ -34,12 +34,18 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
+                    {{#if loggedIn}}
+                    <a id="logout-btn" class="button is-light">
+                        Logout
+                    </a>
+                    {{else}}
                     <a href="/users/signup" class="button is-primary">
                         <strong>Sign up</strong>
                     </a>
                     <a href="/users/login" class="button is-light">
                         Log in
                     </a>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -48,6 +54,10 @@
     <div>
         {{{body}}}
     </div>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 {{!-- set footer to bottom of page --}}
 <footer class="footer">

@@ -11,7 +11,10 @@ router.get('/', async (req, res) => {
         post.get({plain:true})
         )
     console.log(currentPostsData);
-    res.render('all',{currentPostsData})
+    res.render('all',{
+        currentPostsData,
+        loggedIn: Boolean(req?.session?.loggedIn)
+    })
     }catch (err) {
         console.log(err);
         res.status(500).json(err);
