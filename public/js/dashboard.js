@@ -21,3 +21,4 @@ const addPost= async(event)=>{
 };
 
 submitBtn.addEventListener("click", addPost);
+

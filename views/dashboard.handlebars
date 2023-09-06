@@ -1,5 +1,19 @@
 {{#each userPosts as |posts|}}
-{{> blogposts}}
+<article class="media">
+    <div class="media-content">
+        <div class="content container is-mobile">
+            <p>
+            <div class="is-flex is-justify-content-space-between">
+                <div><strong>{{blog_title}}</strong></div>
+                <div>Posted on {{format_date createdAt}}</div>
+            </div>
+            <br>
+            {{blog_text}}
+            <br>
+            </p>
+        </div>
+    </div>
+</article>
 {{/each}}
 
 {{userId}}
