@@ -67,5 +67,17 @@ router.put('/:blog_id',async(req,res)=>{
     }
 })
 
-router.delete(':/blog_id,')
+router.delete('/:blog_id', async(req,res)=>{
+    try{
+        const deleteBlog = await Blog.destroy({
+            where:{
+                id:req.params.blog_id
+            }
+        })
+        return res.status(200).json(deleteBlog)
+    }catch(err){
+        console.log(err);
+        return res.json(err);
+    }
+})
 module.exports = router;
