@@ -47,4 +47,25 @@ router.post('/addpost',withAuth,async(req,res)=>{
       res.status(500).json(err);
     }
 })
+
+// does work how to get blog_id - need to put in route
+router.put('/:blog_id',async(req,res)=>{
+    try{
+        const updatedBlog = await Blog.update({
+            blog_title:req.body.blog_title,
+            blog_text:req.body.blog_text,
+        },
+        {
+            where:{
+                id:req.params.blog_id
+            }
+        })
+    res.status(200).json(updatedBlog);
+    }catch(err){
+        console.log(err);
+      res.status(500).json(err);
+    }
+})
+
+router.delete(':/blog_id,')
 module.exports = router;
