@@ -22,8 +22,14 @@ const signupFormSubmission= async(event)=>{
         }
     }
   } else{
-    alert('passwords do not match!')
-    }
+    // need to append after submit button
+    var correct=document.createElement("p");
+    correct.textContent="Passwords do not match!";
+    correct.style.color="red";
+    document.body.appendChild(correct);
+    correct.after(submitBtn)
+    
+  }
 }
 
 submitBtn.addEventListener("click", signupFormSubmission);
