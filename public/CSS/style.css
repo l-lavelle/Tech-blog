@@ -1,11 +1,12 @@
 /* .full-height{
     height:100vh
 }
-#footer{
-    position:fixed;
-    bottom:0;
-    color:blue;
-}
+
 #trial{
     font-size: 300px;
 } */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
