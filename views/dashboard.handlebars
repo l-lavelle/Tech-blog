@@ -1,3 +1,9 @@
 {{#each userPosts as |posts|}}
 {{> blogposts}}
 {{/each}}
+
+{{userId}}
+{{loggedIn}}
+<a href="/api/blogs/:user_id/addpost" class="button is-primary">
+    <strong>New Post</strong>
+</a>
