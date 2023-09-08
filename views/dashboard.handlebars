@@ -16,8 +16,7 @@
 </article>
 {{/each}}
 
-{{userId}}
-{{loggedIn}}
-<a href="/api/blogs/:user_id/addpost" class="button is-primary">
+
+<a href="/api/blogs/{{userId}}/addpost" class="button is-primary">
     <strong>New Post</strong>
 </a>

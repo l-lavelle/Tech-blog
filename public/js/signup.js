@@ -42,3 +42,5 @@ const signupFormSubmission = async (event) => {
 };
 
 submitBtn.addEventListener("click", signupFormSubmission);
+
+// Need to delete error after each button click
