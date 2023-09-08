@@ -3,7 +3,6 @@ const { Blog, User } = require("../../models");
 
 const withAuth = require("../../utils/auth");
 
-// how to get user id in the routes??
 router.get("/:user_id", withAuth, async (req, res) => {
   try {
     const userPostData = await Blog.findAll({

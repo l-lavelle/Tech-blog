@@ -21,11 +21,15 @@
                 <a href="/" class="navbar-item">
                     Home
                 </a>
-
-                {{!-- need to change this but the route is working --}}
+                {{#if loggedIn}}
                 <a href="/api/blogs/{{userId}}" class="navbar-item">
                     Dashboard
                 </a>
+                {{else}}
+                <a href="/users/login" class="navbar-item">
+                    Dashboard
+                </a>
+                 {{/if}}
             </div>
         </div>
 
@@ -57,7 +61,7 @@
     <script src="/js/logout.js"></script>
     {{/if}}
 </body>
-{{!-- set footer to bottom of page --}}
+
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
