@@ -1,5 +1,10 @@
 const submitBtn = document.getElementById("submit-btn");
 
+var errorMessage = document.createElement("p");
+errorMessage.className = "error-login";
+document.body.appendChild(errorMessage);
+errorMessage.after(submitBtn);
+
 const LoginFormSubmission = async (event) => {
   event.preventDefault();
 
@@ -12,13 +17,12 @@ const LoginFormSubmission = async (event) => {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-    // console.log(response);
-    // console.log(await response.json());
 
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert("Failed to log in.");
+      errorMessage.textContent = "Incorrect Login or Password";
+      errorMessage.style.color = "red";
     }
   }
 };

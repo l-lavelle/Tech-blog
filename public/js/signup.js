@@ -29,7 +29,8 @@ const signupFormSubmission = async (event) => {
         errorMessage.textContent = "Username already exists";
         errorMessage.style.color = "red";
       } else {
-        alert("Failed to sign up.");
+        errorMessage.textContent = "Failed to sign up";
+        errorMessage.style.color = "red";
       }
     }
   } else {
