@@ -1,12 +1,16 @@
-/* .full-height{
-    height:100vh
+/* footer not working */
+/* body {
+  position: relative;
+  margin-bottom: 20px;
 }
 
-#trial{
-    font-size: 300px;
-} */
-footer {
-  position: fixed;
-  bottom: 0;
+.footer {
+  position: absolute;
   width: 100%;
+}
+.footer p {
+  text-align: center;
+} */
+.error-SignUp {
+  text-align: center;
 }

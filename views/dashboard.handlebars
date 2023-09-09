@@ -1,3 +1,9 @@
+<div class="container">
+    <a href="/api/blogs/{{userId}}/addpost" id="new-post" class="button is-primary">
+        <strong>New Post</strong>
+    </a>
+</div>
+
 <div>
     {{#each userPosts as |posts|}}
     <article class="media">
@@ -20,8 +26,4 @@
     {{/each}}
 </div>
 
-
-<a href="/api/blogs/{{userId}}/addpost" class="button is-primary">
-    <strong>New Post</strong>
-</a>
 <script src="/js/dashboard.js"></script>

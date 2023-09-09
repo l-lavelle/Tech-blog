@@ -5,7 +5,6 @@ router.get("/", async (req, res) => {
   try {
     const currentPosts = await Blog.findAll({
       include: [{ model: User }],
-      limit: 5,
     });
     const currentPostsData = currentPosts.map((post) =>
       post.get({ plain: true })

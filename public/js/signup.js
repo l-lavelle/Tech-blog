@@ -1,8 +1,12 @@
 const submitBtn = document.getElementById("submit-btn");
+var errorMessage = document.createElement("p");
+errorMessage.className = "error-SignUp";
+document.body.appendChild(errorMessage);
+errorMessage.after(submitBtn);
 
 const signupFormSubmission = async (event) => {
   event.preventDefault();
-
+  errorMessage.textContent = "";
   const name = document.querySelector("#name-signup").value.trim();
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
@@ -22,25 +26,16 @@ const signupFormSubmission = async (event) => {
       if (response.ok) {
         document.location.replace("/");
       } else if (trial.name === "SequelizeUniqueConstraintError") {
-        var uniqueError = document.createElement("p");
-        uniqueError.textContent = "Username already exists";
-        uniqueError.style.color = "red";
-        document.body.appendChild(uniqueError);
-        uniqueError.after(submitBtn);
+        errorMessage.textContent = "Username already exists";
+        errorMessage.style.color = "red";
       } else {
         alert("Failed to sign up.");
       }
     }
   } else {
-    // need to append after submit button
-    var passwordCorrect = document.createElement("p");
-    passwordCorrect.textContent = "Passwords do not match!";
-    passwordCorrect.style.color = "red";
-    document.body.appendChild(passwordCorrect);
-    passwordCorrect.after(submitBtn);
+    errorMessage.textContent = "Passwords do not match!";
+    errorMessage.style.color = "red";
   }
 };
 
 submitBtn.addEventListener("click", signupFormSubmission);
-
-// Need to delete error after each button click
