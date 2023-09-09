@@ -1,6 +1,6 @@
 const submitBtn = document.getElementById("submit-btn");
 var errorMessage = document.createElement("p");
-errorMessage.className = "error-SignUp";
+errorMessage.className = "error-signup";
 document.body.appendChild(errorMessage);
 errorMessage.after(submitBtn);
 
