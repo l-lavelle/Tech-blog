@@ -1,12 +1,12 @@
 [
     {
-        "blog_title": "Trial blog 1",
-        "blog_text": "tiral blog text",
+        "blog_title": "What is UTF-8?",
+        "blog_text": "UTF-8 is variable length character encoding standard for electronic communication",
         "user_id": 1
     },
     {
-        "blog_title": "Trial blog 2",
-        "blog_text": "trial 2 blog text",
+        "blog_title": "Media Queries",
+        "blog_text": "Allow us to create CSS rule based on various parameters and create responsiveness for web applications",
         "user_id": 2
     }
 ]
