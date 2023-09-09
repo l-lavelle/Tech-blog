@@ -26,6 +26,7 @@ router.get("/:user_id", withAuth, async (req, res) => {
 router.get("/:user_id/addpost", withAuth, async (req, res) => {
   try {
     res.render("addpost", {
+      loggedIn: Boolean(req?.session?.loggedIn),
       userId: req?.session?.userId,
     });
   } catch (err) {
@@ -48,8 +49,20 @@ router.post("/addpost", withAuth, async (req, res) => {
   }
 });
 
+router.get("/:blog_id/options", async (req, res) => {
+  try {
+    res.render("postoptions", {
+      loggedIn: Boolean(req?.session?.loggedIn),
+      userId: req?.session?.userId,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // does work how to get blog_id - need to put in route
-router.put("/:blog_id", async (req, res) => {
+router.put("/:blog_id/options", async (req, res) => {
   try {
     const updatedBlog = await Blog.update(
       {
@@ -69,7 +82,7 @@ router.put("/:blog_id", async (req, res) => {
   }
 });
 
-router.delete("/:blog_id", async (req, res) => {
+router.delete("/:blog_id/options", async (req, res) => {
   try {
     const deleteBlog = await Blog.destroy({
       where: {

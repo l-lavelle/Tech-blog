@@ -1,20 +1,24 @@
-{{#each userPosts as |posts|}}
-<article class="media">
-    <div class="media-content">
-        <div class="content container is-mobile">
-            <p>
-            <div class="is-flex is-justify-content-space-between">
-                <div ><strong>{{blog_title}}</strong></div>
-                <div>Posted on {{format_date createdAt}}</div>
+<div>
+    {{#each userPosts as |posts|}}
+    <article class="media">
+        <div class="media-content">
+            <div class="content container is-mobile">
+                <p>
+                <div class="is-flex is-justify-content-space-between">
+                    <a href="/api/blogs/{{id}}/options">
+                    <div class="blogTitle"><strong>{{blog_title}}</strong></div>
+                    </a>
+                    <div>Posted on {{format_date createdAt}}</div>
+                </div>
+                <br>
+                {{blog_text}}
+                <br>
+                </p>
             </div>
-            <br>
-            {{blog_text}}
-            <br>
-            </p>
         </div>
-    </div>
-</article>
-{{/each}}
+    </article>
+    {{/each}}
+</div>
 
 
 <a href="/api/blogs/{{userId}}/addpost" class="button is-primary">
