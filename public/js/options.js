@@ -1,11 +1,21 @@
 const updateBtn = document.getElementById("update-btn");
+const blog_text = document.querySelector("#blog_post");
+var optionsError = document.createElement("p");
+
+optionsError.className = "error-message";
+document.body.appendChild(optionsError);
 
 const updatePost = async (event) => {
   event.preventDefault();
+  optionsError.textContent = "";
+
   const blog_title = document.querySelector("#blog_title").value.trim();
   const blog_text = document.querySelector("#blog_post").value.trim();
 
-  const id = window.location.href.split("/")[5];
+  if (blog_title === "" || blog_text === "") {
+    optionsError.textContent = "Please enter a blog title and text";
+    optionsError.style.color = "red";
+  }
 
   if (blog_title && blog_text) {
     const response = await fetch(`/api/blogs/${id}/options`, {
