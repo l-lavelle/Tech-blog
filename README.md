@@ -44,12 +44,13 @@ Node packages:
 
 ## Usage
 
-The program is deployed in heroku link below. Click on the get started button on the landing page. This will direct you to the notes page. Add notes by typing in title and text then clicking the save button. Clicking on saved notes in the left-hand column it will populate in the main section. Clicking on the trash can button will delete that particular note. Clicking on the plus button will allow you to write a new note. <br>
-To run program from IDE type node server.js into the terminal. Click into the website link in the terminal to view note taker.
+The program is deployed in heroku link below. Upon entering site can see the current posts on the home page. To add posts click the button in the nav bar to login or signup. Follow the prompts and will login you into the site. On your dahboard you can update/delete your current posts and add new posts that will appear on homepage. When you are done using the application logout. <br>
+To run program from IDE create env file with variables found in env.Example. Then type node server.js into the terminal. Click into the website link in the terminal to view the tech blog.
 
-<img src="./images/notes-page.png" width='400' height='auto'><br>
-<img src="./images/write-note.png" width='400' height='auto'><br>
-<img src="./images/note-saved.png" width='400' height='auto'><br>
+<img src="./images/Home-page.png" width='550' height='auto'><br>
+<img src="./images/signup.png" width='550' height='auto'><br>
+<img src="./images/login.png" width='550' height='auto'><br>
+<img src="./images/dashboard.png" width='550' height='auto'><br>
 
 ## License
 
@@ -61,4 +62,4 @@ N/A
 
 ## Heroku Deployment
 
-[Heroku Link](https://fast-temple-76500-f5720780989c.herokuapp.com/)
+[Heroku Link]()
