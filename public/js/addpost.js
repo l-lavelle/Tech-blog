@@ -11,6 +11,7 @@ const addPost = async (event) => {
 
   const blog_title = document.querySelector("#blog_title").value.trim();
   const blog_text = document.querySelector("#blog_post").value.trim();
+  const id = window.location.href.split("/")[5];
 
   if (blog_title === "" || blog_text === "") {
     addError.textContent = "Please enter a blog title and text";
@@ -24,7 +25,7 @@ const addPost = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/`);
+      document.location.replace(`/api/blogs/${id}`);
     } else {
       alert("Post did not submit");
     }
