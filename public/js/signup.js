@@ -54,3 +54,6 @@ const signupFormSubmission = async (event) => {
 };
 
 submitBtn.addEventListener("click", signupFormSubmission);
+
+//Ideas for extra: toggle button to show password
+//https://www.w3schools.com/howto/howto_js_toggle_password.asp

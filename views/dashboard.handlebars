@@ -11,22 +11,16 @@
     {{#each userPosts as |posts|}}
     <article class="media">
         <div class="media-content">
-            <div class="content container is-mobile">
-                <p>
-                <div class="is-flex is-justify-content-space-between">
-                    <a href="/api/blogs/{{id}}/options">
-                    <div class="blogTitle"><strong>{{blog_title}}</strong></div>
-                    </a>
-                    <div>Posted on {{format_date createdAt}}</div>
-                </div>
-                <br>
-                {{blog_text}}
-                <br>
-                </p>
+            <div class="content container is-mobile blogs">
+                    {{!-- <a href="/api/blogs/{{id}}/options"> --}}
+                    <div id="{{id}}" class="blogTitle"><strong>{{blog_title}}</strong></div>
+                    {{!-- </a> --}}
+                    <div>{{format_date createdAt}}</div>
+                <p class="blogText">{{blog_text}}</p>
             </div>
         </div>
     </article>
     {{/each}}
 </div>
 
-
+<script src="/js/dashboard.js"></script>
