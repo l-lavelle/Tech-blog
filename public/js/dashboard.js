@@ -1,37 +1,57 @@
 const blogTitles = document.querySelectorAll(".blogTitle");
 blogTitles.forEach((title) => title.addEventListener("click", optionsModal));
 const modal = document.getElementById("dash-modal");
-//trail for modal pop up
+const modalTitle = document.querySelector(".title-modal");
+const modalBody = document.querySelector("#post-body");
+
+//Modal pop-up with options
 async function optionsModal() {
   modal.classList.add("is-active");
 
   let parent = this.parentNode;
   let textP = parent.querySelector(".blogText");
+  let blogId = parent.querySelector(".blogTitle").id;
   let titleP = parent.querySelector(".blogTitle");
   const title = titleP.innerHTML;
   let blogText = textP.innerHTML;
 
-  const modalBody = document.querySelector("#post-body");
-  modalBody.value = blogText;
-
-  const modalTitle = document.querySelector(".modal-card-title");
+  modalTitle.id = blogId;
   modalTitle.innerHTML = title;
+  modalBody.value = blogText;
 }
 
+//On cancel remove modal
 async function cancelModal() {
-  console.log(3);
   modal.classList.remove("is-active");
 }
-//will change to text area
-// async function blogOptions() {
-//   let parent = this.parentNode;
-//   let textP = parent.querySelector(".blogText");
-//   let blogText = textP.innerHTML;
 
-//   const textarea = document.createElement("textarea");
-//   textarea.innerHTML = blogText;
+//Update blog post
+async function saveChanges() {
+  console.log(3);
+  const blog_title = modalTitle.value.trim();
+  const blog_text = modalBody.value.trim();
+  const id = modalTitle.id;
+  if (blog_title === "") {
+    modalTitle.placeholder = "Please enter a blog title";
+  } else if (blog_text === "") {
+    modalBody.placeholder = "Please enter a blog text";
+  }
+  if (blog_title && blog_text) {
+    const response = await fetch(`/api/blogs/${id}/options`, {
+      method: "PUT",
+      body: JSON.stringify({ blog_title, blog_text }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert("Post did not update");
+    }
+  }
+}
 
-//   textP.replaceWith(textarea);
-//   console.log(blogText);
-// }
-//Need the update and delete button to show up
+async function deletePost() {
+  console.log(this);
+}
+
+//take out alerts
