@@ -1,3 +1,4 @@
+//Get elements
 const blogTitles = document.querySelectorAll(".blogTitle");
 blogTitles.forEach((title) => title.addEventListener("click", optionsModal));
 const modal = document.getElementById("dash-modal");
@@ -50,8 +51,21 @@ async function saveChanges() {
   }
 }
 
+//Delete blog post
 async function deletePost() {
-  console.log(this);
+  const id = modalTitle.id;
+  if (id) {
+    const response = await fetch(`/api/blogs/${id}/options`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert("Post did not delete");
+    }
+  }
 }
 
 //take out alerts
