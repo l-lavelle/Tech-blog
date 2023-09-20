@@ -6,7 +6,22 @@
         <strong>New Post</strong>
     </a>
 </div>
-
+<div id="dash-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+    </header>
+    <section class="modal-card-body">
+      <textarea id="post-body"class="textarea"rows="10"></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button onclick="cancelModal()" class="button">Cancel</button>
+      <button class="button is-danger">Delete Post</button>
+    </footer>
+  </div>
+</div>
 <div>
     {{#each userPosts as |posts|}}
     <article class="media">
