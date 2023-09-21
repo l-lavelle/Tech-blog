@@ -10,7 +10,7 @@ async function optionsModal() {
   modal.classList.add("is-active");
 
   let parent = this.parentNode;
-  let textP = parent.querySelector(".blogText");
+  let textP = parent.querySelector(".dash-blogText");
   let blogId = parent.querySelector(".blogTitle").id;
   let titleP = parent.querySelector(".blogTitle");
   const title = titleP.innerHTML;

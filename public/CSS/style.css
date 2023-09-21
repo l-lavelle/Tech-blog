@@ -11,6 +11,26 @@
 .footer p {
   text-align: center;
 } */
+.title {
+  text-align: center;
+}
+/* Homepage */
+.home-blog-post {
+  max-height: 100px;
+  max-width: auto;
+  white-space: normal;
+  /* text-overflow: ellipsis; would need white-space to be nowrap*/
+  display: block;
+  overflow: hidden;
+}
+/* Dashboard CSS */
+.dash-blogText {
+  max-height: 100px;
+  max-width: auto;
+  white-space: normal;
+  display: block;
+  overflow: hidden;
+}
 .error-SignUp {
   text-align: center;
 }
