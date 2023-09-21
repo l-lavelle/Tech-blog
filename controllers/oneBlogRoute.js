@@ -5,6 +5,7 @@ router.get("/:blog_id", async (req, res) => {
   try {
     const blogPost = await Blog.findByPk(req.params.blog_id, {
       include: [{ model: Comment }, { model: User }],
+      order: [[{ model: Comment }, "createdAt", "DESC"]],
     });
 
     const blog = blogPost.get({ plain: true });
