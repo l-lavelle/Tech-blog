@@ -12,6 +12,7 @@ router.get("/:user_id", withAuth, async (req, res) => {
       },
     });
     const userPosts = userPostData.map((posts) => posts.get({ plain: true }));
+
     res.render("dashboard", {
       userPosts,
       loggedIn: Boolean(req?.session?.loggedIn),

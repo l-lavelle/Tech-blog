@@ -1,6 +1,6 @@
 <article class="media">
     <div class="media-content">
-        <div id="{{id}}" onclick="addHref({{id}})" class="content container is-mobile full-post">
+        <div id="{{id}}"  class="content container is-mobile full-post">
             <p>
             <div class="is-flex is-justify-content-space-between">
                 <div><strong>{{blog.blog_title}}</strong></div>
@@ -14,12 +14,12 @@
         <div class="media-content">
             <div class="field">
             <p class="control">
-                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                <textarea id="comment-text" class="textarea" placeholder="Add a comment..."></textarea>
             </p>
             </div>
             <div class="field">
             <p class="control">
-                <button class="button add-comment">Post comment</button>
+                <button id="add-comment" class="button">Post comment</button>
             </p>
             </div>
         </div>
@@ -38,4 +38,4 @@
     </div>
 </article>
 
-<script src="js/singleblog.js"></script>
+<script src="/js/singleblog.js"></script>

@@ -8,7 +8,7 @@ router.get("/:blog_id", async (req, res) => {
     });
 
     const blog = blogPost.get({ plain: true });
-    // res.json({ blog });
+
     res.render("singleBlog", {
       blog,
       loggedIn: req.session.loggedIn,
