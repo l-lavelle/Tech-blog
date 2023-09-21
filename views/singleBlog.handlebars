@@ -1,15 +1,41 @@
 <article class="media">
     <div class="media-content">
-        <div class="content container is-mobile blogs">
-                <div  class="blogTitle">{{blog.blog_title}}</div>
-                {{!-- <div>{{format_date createdAt}}</div>
-            <p class="blogText">{{blog_text}}</p> --}}
+        <div id="{{id}}" onclick="addHref({{id}})" class="content container is-mobile full-post">
+            <p>
+            <div class="is-flex is-justify-content-space-between">
+                <div><strong>{{blog.blog_title}}</strong></div>
+                <div>Posted by: {{blog.user.name}} on {{format_date blog.createdAt}}</div>
+            </div>
+            <br>
+            {{blog.blog_text}}
+            <br>
+            </p>
+
+        <div class="media-content">
+            <div class="field">
+            <p class="control">
+                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+            </p>
+            </div>
+            <div class="field">
+            <p class="control">
+                <button class="button add-comment">Post comment</button>
+            </p>
+            </div>
         </div>
+
+        <br>
+        {{#each blog.comments as |comment|}}
+        <div class="content">
+          <p>
+            <h4>Need to find Name </h4>
+            <p>{{comment_text}}</p>
+            <small>- {{format_date createdAt}} -</small>
+          </p>
+        </div>
+        {{/each}}
+        
     </div>
 </article>
-<h1>HI</h1>
-<p>{{blog.id}}</p>
-<p>{{blog.blog_text}}</p>
-<p>bye</p>
 
 <script src="js/singleblog.js"></script>
