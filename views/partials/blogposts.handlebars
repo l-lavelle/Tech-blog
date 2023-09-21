@@ -1,8 +1,8 @@
 <article class="media">
     <div class="media-content">
-        <div class="content container is-mobile">
+        <div id="{{id}}" onclick="addHref({{id}})" class="content container is-mobile full-post">
             <p>
-            <div id="{{id}}" class="is-flex is-justify-content-space-between">
+            <div class="is-flex is-justify-content-space-between">
                 <div><strong>{{blog_title}}</strong></div>
                 <div>Posted by: {{user.name}} on {{format_date createdAt}}</div>
             </div>
