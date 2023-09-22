@@ -1,4 +1,6 @@
 const submitBtn = document.getElementById("submit-btn");
+const userField = document.querySelector("#username-login");
+const passwordField = document.querySelector("#password-login");
 
 var errorMessage = document.createElement("p");
 errorMessage.className = "error-login";
@@ -8,8 +10,11 @@ errorMessage.after(submitBtn);
 const LoginFormSubmission = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector("#username-login").value.trim();
-  const password = document.querySelector("#password-login").value.trim();
+  errorMessage.textContent = "";
+  userField.className = "input";
+  passwordField.className = "input";
+  const username = userField.value.trim();
+  const password = passwordField.value.trim();
 
   if (username && password) {
     const response = await fetch("/users/login", {
@@ -23,6 +28,8 @@ const LoginFormSubmission = async (event) => {
     } else {
       errorMessage.textContent = "Incorrect Login or Password";
       errorMessage.style.color = "red";
+      userField.className = "input is-danger";
+      passwordField.className = "input is-danger";
     }
   }
 };
