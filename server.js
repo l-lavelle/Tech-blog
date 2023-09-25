@@ -52,3 +52,5 @@ sequelize.sync().then(() => {
 
 //Post request on comment will not redirect to login page
 //Fix how comments look
+// Makes you login twice
+// Navbar issue
