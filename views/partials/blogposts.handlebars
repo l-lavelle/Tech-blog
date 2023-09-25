@@ -2,14 +2,11 @@
     <div class="media-content">
         <div id="{{id}}" onclick="addHref({{id}})" class="content container is-fluid full-post">
             <p>
-            <div class="is-flex is-justify-content-space-between">
-                <div><strong>{{blog_title}}</strong></div>
-                <div>Posted by: {{user.name}} on {{format_date createdAt}}</div>
-            </div>
+            <div><strong>{{blog_title}}</strong></div>
             <br>
             <p class="home-blog-post">{{blog_text}}</p>
-            <br>
-            </p>
+            <div>Posted by: {{user.name}} on {{format_date createdAt}}</div>
+            </p>  
     </div>
 </article>
 

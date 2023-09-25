@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/:blog_id", async (req, res) => {
   try {
@@ -21,7 +22,7 @@ router.get("/:blog_id", async (req, res) => {
   }
 });
 
-router.post("/comment/:blog_id", async (req, res) => {
+router.post("/comment/:blog_id", withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       blog_id: req.params.blog_id,

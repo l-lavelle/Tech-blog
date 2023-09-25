@@ -49,3 +49,5 @@ sequelize.sync().then(() => {
     console.log("Server listening on: http://localhost:" + PORT)
   );
 });
+
+//Post request on comment will not redirect to login page
