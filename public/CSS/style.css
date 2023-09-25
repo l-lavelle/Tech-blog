@@ -1,7 +1,8 @@
 .title {
   text-align: center;
 }
-/* Homepage */
+
+/* Homepage CSS*/
 .home-blog-post {
   max-height: 100px;
   max-width: auto;
@@ -10,6 +11,7 @@
   display: block;
   overflow: hidden;
 }
+
 /* Dashboard CSS */
 .dash-blogText {
   max-height: 100px;
@@ -18,7 +20,13 @@
   display: block;
   overflow: hidden;
 }
+.dash-title:hover,
+.dash-title:active {
+  font-size: 150%;
+  font-weight: bold;
+}
 
+/* figure out where errors are */
 .error-SignUp {
   text-align: center;
 }
@@ -29,6 +37,7 @@
   text-align: center;
 }
 
+/* Screen Responsiveness */
 @media screen and (max-width: 1024px) {
   .mobile-blog {
     margin-left: 5%;

@@ -1,11 +1,17 @@
-<div class="container">
+<div class="container mobile-blog">
     <h1 class="title"> {{userPosts.0.user.name}}'s Dashboard</h1>
-    <p>Here you can add new posts or update/delete posts by clicking on the post name!</p>
+    <p class="has-text-centered">Here you can add new posts or update/delete posts by clicking on the post name!</p>
     <br>
+</div>
+
+<div class="columns is-centered">
+  <div  class="column has-text-centered is-2">
     <a href="/api/blogs/{{userId}}/addpost" id="new-post" class="button is-primary">
         <strong>New Post</strong>
     </a>
+  </div>
 </div>
+
 <div id="dash-modal" class="modal">
   <div class="modal-background"></div>
   <div class="modal-card">
@@ -13,7 +19,7 @@
       <textarea class="textarea title-modal"rows="1"></textarea>
     </header>
     <section class="modal-card-body">
-      <textarea id="post-body"class="textarea"rows="10"></textarea>
+      <textarea id="post-body"class="textarea"rows="15"></textarea>
     </section>
     <footer class="modal-card-foot">
       <button onclick="saveChanges()" class="button is-success">Save changes</button>
@@ -24,10 +30,10 @@
 </div>
 <div>
     {{#each userPosts as |posts|}}
-    <article class="media">
+    <article class="media mobile-blog">
         <div class="media-content">
             <div class="content container is-mobile blogs">
-                    <div id="{{id}}" class="blogTitle">{{blog_title}}</div>
+                    <div id="{{id}}" class="blogTitle dash-title">{{blog_title}}</div>
                     <div>{{format_date createdAt}}</div>
                 <p class="dash-blogText">{{blog_text}}</p>
             </div>
