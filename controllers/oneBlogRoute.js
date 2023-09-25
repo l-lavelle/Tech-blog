@@ -13,8 +13,8 @@ router.get("/:blog_id", async (req, res) => {
 
     res.render("singleBlog", {
       blog,
-      loggedIn: req.session.loggedIn,
-      userId: req.session.userId,
+      loggedIn: Boolean(req?.session?.loggedIn),
+      userId: req?.session?.userId,
     });
   } catch (err) {
     console.log(err);
@@ -22,7 +22,7 @@ router.get("/:blog_id", async (req, res) => {
   }
 });
 
-router.post("/comment/:blog_id", withAuth, async (req, res) => {
+router.post("/comment/:blog_id", async (req, res) => {
   try {
     const newComment = await Comment.create({
       blog_id: req.params.blog_id,

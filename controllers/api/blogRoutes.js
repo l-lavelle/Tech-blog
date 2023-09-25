@@ -24,7 +24,7 @@ router.get("/:user_id", async (req, res) => {
   }
 });
 
-router.get("/:user_id/addpost", withAuth, async (req, res) => {
+router.get("/:user_id/addpost", async (req, res) => {
   try {
     res.render("addpost", {
       loggedIn: Boolean(req?.session?.loggedIn),
@@ -36,7 +36,7 @@ router.get("/:user_id/addpost", withAuth, async (req, res) => {
   }
 });
 
-router.post("/addpost", withAuth, async (req, res) => {
+router.post("/addpost", async (req, res) => {
   try {
     const newBlog = await Blog.create({
       blog_title: req.body.blog_title,
