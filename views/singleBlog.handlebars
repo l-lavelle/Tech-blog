@@ -2,12 +2,12 @@
     <div class="media-content mobile-blog">
         <div id="{{id}}"  class="content container full-post">
             <p>
-                <div class="has-text-centered"><strong>{{blog.blog_title}}</strong></div>
+                <div class="has-text-centered title is-4"><strong>{{blog.blog_title}}</strong></div>
                 <br>
                 {{blog.blog_text}}
                 <div class="mt-3">Posted by: {{blog.user.name}} on {{format_date blog.createdAt}}</div>
             </p>
-
+        {{#if loggedIn}}
         <div class="media-content">
             <div class="field">
             <p class="control">
@@ -20,15 +20,22 @@
             </p>
             </div>
         </div>
+        {{else}}
+        
+        {{/if}}
         <h4 class="title is-4 mt-3">Comments</h4>
         {{#each blog.comments as |comment|}}
-        <div class="content has-text-centered user-comment">
-            <p class="mt-3">{{comment_text}}</p>
-            <small>- {{format_date createdAt}} -</small>
-        </div>
+        <article class="media">
+            <div class="media-content media-left">
+                <div class="content">
+                <p>
+                {{comment_text}}
+                </p>
+                <small> · {{format_date createdAt}} ·</small>
+                </div>
+            </div>
+        </article>
         {{/each}}
-        
-    </div>
-</article>
+ 
 
 <script src="/js/singleblog.js"></script>

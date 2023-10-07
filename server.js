@@ -50,8 +50,8 @@ sequelize.sync().then(() => {
   );
 });
 
-//Post request on comment will not redirect to login page
-//Fix how comments look
+// Fix how comments look
+// make look less like bulma
 // Makes you login twice
-// Navbar issue buttons
-// When create new user name doesnt appear on dashboard
+// Look over README
+// Make logo bigger
