@@ -24,7 +24,7 @@ const LoginFormSubmission = async (event) => {
     });
     console.log(response);
     if (response.ok) {
-      document.location.replace("/");
+      window.location.replace("/");
     } else {
       errorMessage.textContent = "Incorrect Login or Password";
       errorMessage.style.color = "red";

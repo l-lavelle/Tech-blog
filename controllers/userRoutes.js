@@ -33,7 +33,10 @@ router.post("/signup", async (req, res) => {
 //Render login page
 router.get("/login", async (req, res) => {
   try {
-    res.render("login");
+    res.render("login", {
+      loggedIn: Boolean(req?.session?.loggedIn),
+      userId: req?.session?.userId,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

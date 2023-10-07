@@ -11,6 +11,12 @@ router.get("/", async (req, res) => {
       post.get({ plain: true })
     );
     console.log(currentPostsData);
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires", "0");
+    console.log("loggedIn", Boolean(req.session.loggedIn));
+    console.log("session", Boolean(req.session));
+    console.log("userId", req.session.userId);
     res.render("all", {
       currentPostsData,
       loggedIn: Boolean(req?.session?.loggedIn),
