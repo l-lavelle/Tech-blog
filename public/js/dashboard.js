@@ -67,5 +67,3 @@ async function deletePost() {
     }
   }
 }
-
-//take out alerts

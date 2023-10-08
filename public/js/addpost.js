@@ -1,10 +1,12 @@
 const submitBtn = document.getElementById("submit-btn");
 
+// Create error p
 var addError = document.createElement("p");
 addError.className = "error-message";
 document.body.appendChild(addError);
 addError.after(submitBtn);
 
+// Create a post with error checking
 const addPost = async (event) => {
   event.preventDefault();
   addError.textContent = "";
@@ -27,7 +29,8 @@ const addPost = async (event) => {
     if (response.ok) {
       document.location.replace(`/api/blogs/${id}`);
     } else {
-      alert("Post did not submit");
+      addError.textContent = "Post did not submit";
+      addError.style.color = "red";
     }
   }
 };

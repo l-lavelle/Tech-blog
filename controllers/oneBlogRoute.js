@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
-const withAuth = require("../utils/auth");
 
+// Get all information for single blog post
 router.get("/:blog_id", async (req, res) => {
   try {
     const blogPost = await Blog.findByPk(req.params.blog_id, {
@@ -30,6 +30,7 @@ router.get("/:blog_id", async (req, res) => {
   }
 });
 
+// Create a comment for a post
 router.post("/comment/:blog_id", async (req, res) => {
   try {
     const newComment = await Comment.create({

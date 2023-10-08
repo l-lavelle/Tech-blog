@@ -9,10 +9,10 @@
 </head>
 
 <header>
- <nav class="navbar" role="navigation" aria-label="main navigation">
+ <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
    <p class="navbar-item logo">
-      <img src="/logo.png" width="125">
+      <img src="/logo.png" width="125" height="150">
     </p>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -25,7 +25,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a href="/" class="navbar-item">
-        Home
+          Home
       </a>
 
       {{#if loggedIn}}
@@ -43,14 +43,14 @@
         <div class="buttons">
           {{#if loggedIn}}
             <a id="logout-btn" class="button is-light">
-                Logout
+                <strong>Logout</strong>
             </a>
           {{else}}
-            <a href="/users/signup" class="button is-primary">
+            <a href="/users/signup" class="button is-light">
                 <strong>Sign up</strong>
             </a>
             <a href="/users/login" class="button is-light">
-                Log in
+                <strong>Log in</strong>
             </a>
           {{/if}}
           </a>
@@ -60,6 +60,7 @@
   </div>
 </header>
 <body>
+    <br>
     <div>
         {{{body}}}
     </div>

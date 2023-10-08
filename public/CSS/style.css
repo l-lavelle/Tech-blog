@@ -1,13 +1,8 @@
-.title {
-  text-align: center;
-}
-
 /* Homepage CSS*/
 .home-blog-post {
   max-height: 100px;
   max-width: auto;
   white-space: normal;
-  /* text-overflow: ellipsis; would need white-space to be nowrap*/
   display: block;
   overflow: hidden;
 }
@@ -26,7 +21,12 @@
   font-weight: bold;
 }
 
-/* figure out where errors are */
+/* Center Titles */
+.title {
+  text-align: center;
+}
+
+/* Error Messages */
 .error-SignUp {
   text-align: center;
 }

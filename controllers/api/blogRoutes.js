@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const { Blog, User } = require("../../models");
 
-const withAuth = require("../../utils/auth");
-
+// Render dashboard with single users posts
 router.get("/:user_id", async (req, res) => {
   try {
     const userPostData = await Blog.findAll({
@@ -24,6 +23,7 @@ router.get("/:user_id", async (req, res) => {
   }
 });
 
+// Render add post page
 router.get("/:user_id/addpost", async (req, res) => {
   try {
     res.render("addpost", {
@@ -36,6 +36,7 @@ router.get("/:user_id/addpost", async (req, res) => {
   }
 });
 
+// Create a new blog post
 router.post("/addpost", async (req, res) => {
   try {
     const newBlog = await Blog.create({
@@ -50,6 +51,7 @@ router.post("/addpost", async (req, res) => {
   }
 });
 
+// Get a single blog post for edit Modal
 router.get("/:blog_id/options", async (req, res) => {
   try {
     res.render("postoptions", {
@@ -62,7 +64,7 @@ router.get("/:blog_id/options", async (req, res) => {
   }
 });
 
-// does work how to get blog_id - need to put in route
+// Update a blog post
 router.put("/:blog_id/options", async (req, res) => {
   try {
     const updatedBlog = await Blog.update(
@@ -83,6 +85,7 @@ router.put("/:blog_id/options", async (req, res) => {
   }
 });
 
+// Delete a blog post
 router.delete("/:blog_id/options", async (req, res) => {
   try {
     const deleteBlog = await Blog.destroy({

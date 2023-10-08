@@ -50,8 +50,6 @@ sequelize.sync().then(() => {
   );
 });
 
-// make look less like bulma
-// Makes you login twice
 // Look over README
-// Make logo bigger
-// take out all alerts
+// Comments
+// Delete comments

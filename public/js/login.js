@@ -1,12 +1,15 @@
+//Get elements from page
 const submitBtn = document.getElementById("submit-btn");
 const userField = document.querySelector("#username-login");
 const passwordField = document.querySelector("#password-login");
 
+// Create error message div
 var errorMessage = document.createElement("p");
 errorMessage.className = "error-login";
 document.body.appendChild(errorMessage);
 errorMessage.after(submitBtn);
 
+// Login into site with error checking
 const LoginFormSubmission = async (event) => {
   event.preventDefault();
 
