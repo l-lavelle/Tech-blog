@@ -55,4 +55,3 @@ sequelize.sync().then(() => {
 // Look over README
 // Make logo bigger
 // take out all alerts
-// comment name??
