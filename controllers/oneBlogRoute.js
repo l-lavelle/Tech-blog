@@ -5,7 +5,15 @@ const withAuth = require("../utils/auth");
 router.get("/:blog_id", async (req, res) => {
   try {
     const blogPost = await Blog.findByPk(req.params.blog_id, {
-      include: [{ model: Comment }, { model: User }],
+      include: [
+        {
+          model: Comment,
+          include: {
+            model: User,
+          },
+        },
+        { model: User },
+      ],
       order: [[{ model: Comment }, "createdAt", "DESC"]],
     });
 
