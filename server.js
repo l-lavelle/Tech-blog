@@ -50,8 +50,9 @@ sequelize.sync().then(() => {
   );
 });
 
-// Fix how comments look
 // make look less like bulma
 // Makes you login twice
 // Look over README
 // Make logo bigger
+// take out all alerts
+// comment name??
